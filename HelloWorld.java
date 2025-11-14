@@ -1,21 +1,27 @@
 package helloworld;
 
+import java.util.Scanner;
+
 public class HelloWorld {
 	public static void main(String[] args) {
-		for (int i = 0; i < 5; i++) {
-			System.out.println(i);
+		System.out.println("Nhập vào 1 số nguyên bất kỳ: ");
+		Scanner scanner = new Scanner(System.in);
+		int value = scanner.nextInt();
+
+		int count = 0;
+		for (int i = 2; i < value - 1; i++) {
+			if (value % i == 0) {
+				System.out.println("Ước số khác: " + i);
+				count++;
+
+			}
+//			break;
 		}
-		System.out.println("---------------------------------");
-		int i = 0;
-		while (i < 5) {
-			System.out.println(i);
-			i++;
+		if (count == 0) {
+			System.out.printf("%d là số nguyên tố", value);
+		} else {
+			System.out.printf("%d không là số nguyên tố", value);
 		}
-		System.out.println("---------------------------------");
-		int k = 0;
-		do {
-			System.out.println(k);
-			k++;
-		} while (k < 5);
+		scanner.close();
 	}
 }
